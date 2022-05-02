@@ -758,12 +758,19 @@ body {
   .pets-container .pets-heading {
     width: 62%;
   }
+  .pets-container .slider-wrapper {
+    width: 620px;
+  }
   .pets-container .slider-cards {
+    left: 620px;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    gap: 40px;
+  }
+  .pets-container .slider-item {
     gap: 40px;
   }
   .pets-container .slider-card:nth-last-child(1) {
@@ -962,7 +969,6 @@ body {
   }
   .pets-container .slider .slider-cards {
     width: 100%;
-    gap: 40px;
   }
   .pets-container .slider div.slider-btn-left {
     margin-left: auto;

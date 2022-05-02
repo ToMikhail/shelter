@@ -657,9 +657,18 @@ body {
       width: 62%;
     }
 
+    .slider-wrapper {
+      width: 620px;
+    }
+
     .slider-cards {
+      left: 620px;
       flex-wrap: nowrap;
       justify-content: center;
+      gap: 40px;
+    }
+
+    .slider-item {
       gap: 40px;
     }
 
@@ -866,9 +875,12 @@ body {
       justify-content: space-around;
       align-content: center;
 
+      .slider-wrapper {
+        // width: 270px;
+      }
+
       .slider-cards {
         width: 100%;
-        gap: 40px;
       }
 
       div.slider-btn-left {
