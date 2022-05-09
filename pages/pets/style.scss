@@ -15,6 +15,11 @@ $color-light-xl: #ffffff;
 
 $background-gradient: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
 
+
+body {
+  margin: 0;
+}
+
 .flex-container {
   display: flex;
 }
