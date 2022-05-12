@@ -354,6 +354,7 @@ body {
 .navigation-btn--inactive {
   border-color: $color-dark-s;
   color: $color-dark-s;
+  cursor: default;
 }
 
 .btn.navigation-btn--inactive:hover {
