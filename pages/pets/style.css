@@ -418,6 +418,10 @@ body {
   border-color: #cdcdcd;
 }
 
+.btn.navigation-btn-page {
+  cursor: default;
+}
+
 .btn.navigation-btn-page:hover {
   border-color: #f1cdb3;
   background-color: #f1cdb3;
