@@ -362,6 +362,10 @@ body {
   border-color: $color-dark-s;
 }
 
+.btn.navigation-btn-page {
+  cursor: default;
+}
+
 .btn.navigation-btn-page:hover {
   border-color: $color-primary;
   background-color: $color-primary;
