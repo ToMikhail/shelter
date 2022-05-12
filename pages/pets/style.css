@@ -410,6 +410,7 @@ body {
 .navigation-btn--inactive {
   border-color: #cdcdcd;
   color: #cdcdcd;
+  cursor: default;
 }
 
 .btn.navigation-btn--inactive:hover {
