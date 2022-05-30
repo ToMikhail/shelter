@@ -28,7 +28,6 @@ body {
   display: flex;
 }
 
-
 .burger {
   width: 30px;
   height: 30px;
@@ -357,7 +356,7 @@ body {
 }
 
 .slider-wrapper {
-  width: 990px;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -383,7 +382,9 @@ body {
 
   .slider-cards {
     position: relative;
-    left: 0;
+    left: -1080px;
+    width: 990px;
+    margin: 0 auto;
     align-items: center;
     justify-content: space-between;
     gap: 90px;
@@ -662,7 +663,7 @@ body {
     }
 
     .slider-cards {
-      left: 620px;
+      left: -180px;
       flex-wrap: nowrap;
       justify-content: center;
       gap: 40px;
@@ -778,7 +779,7 @@ body {
     transition: 0.5s;
     z-index: 10;
   }
-  
+
   .header-container {
     #nav-menu-header {
       position: fixed;
@@ -876,11 +877,16 @@ body {
       align-content: center;
 
       .slider-wrapper {
-        // width: 270px;
+        width: 100%;
+        margin: 0 auto;
       }
 
       .slider-cards {
+        left: 0;
         width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        overflow: hidden;
       }
 
       div.slider-btn-left {
@@ -1013,13 +1019,21 @@ body {
 }
 
 @keyframes move-left {
-  from{ left: -540px;}
-  to{left: 540px;}
+  from {
+    left: -540px;
+  }
+  to {
+    left: 540px;
+  }
 }
 
 @keyframes move-right {
-  from{ left: -540px;}
-  to{left: -1620px;}
+  from {
+    left: -540px;
+  }
+  to {
+    left: -1620px;
+  }
 }
 
 .transition-left {
