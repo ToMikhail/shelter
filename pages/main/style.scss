@@ -24,6 +24,10 @@ body {
   margin: 0;
 }
 
+body.lock {
+  overflow: hidden;
+}
+
 .flex-container {
   display: flex;
 }
@@ -663,7 +667,7 @@ body {
     }
 
     .slider-cards {
-      left: -180px;
+      left: -190px;
       flex-wrap: nowrap;
       justify-content: center;
       gap: 40px;
@@ -876,8 +880,12 @@ body {
       justify-content: space-around;
       align-content: center;
 
-      .slider-wrapper {
+      .slider-flex-item {
         width: 100%;
+      }
+
+      .slider-wrapper {
+        width: 320px;
         margin: 0 auto;
       }
 
@@ -886,7 +894,7 @@ body {
         width: 100%;
         max-width: 320px;
         margin: 0 auto;
-        overflow: hidden;
+        // overflow: hidden;
       }
 
       div.slider-btn-left {
@@ -960,7 +968,7 @@ body {
 
       .donation-heading {
         width: 100%;
-        text-align: start;
+        // text-align: start;
       }
 
       .donation-subheading {
@@ -1020,19 +1028,63 @@ body {
 
 @keyframes move-left {
   from {
-    left: -540px;
+    left: -1080px;
   }
   to {
-    left: 540px;
+    left: 0px;
+  }
+}
+
+@media (max-width: 1279px) {
+  @keyframes move-left {
+    from {
+      left: -190px;
+    }
+    to {
+      left: 430px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  @keyframes move-left {
+    from {
+      left: 0;
+    }
+    to {
+      left: 310px;
+    }
   }
 }
 
 @keyframes move-right {
   from {
-    left: -540px;
+    left: -1080px;
   }
   to {
-    left: -1620px;
+    left: -2160px;
+  }
+}
+
+@media (max-width: 1279px) {
+  @keyframes move-right {
+    from {
+      left: -190px;
+    }
+    to {
+      left: -810px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  @keyframes move-right {
+    from {
+      left: 0;
+    }
+    to {
+      left: -310px;
+    }
   }
 }
 
@@ -1044,4 +1096,143 @@ body {
 .transition-right {
   animation-name: move-right;
   animation-duration: 1s;
+}
+
+//popup
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba($color: #000000, $alpha: 0.5);
+  overflow-x: auto;
+  overflow-y: hidden;
+  transition: all 0.8s ease 0s;
+}
+
+.popup-container {
+  width: 630px;
+  height: 350px;
+  position: relative;
+  display: flex;
+  background: $color-light-s;
+  border-radius: 9px;
+  transition: all 0.8s ease 0s;
+  transform: translate(0, 0);
+
+}
+
+.popup-img-container {
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 9px 0 0 9px;
+}
+
+.popup-img {
+  width: 360px;
+  height: auto;
+}
+
+.popup-content {
+  padding: 10px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.popup-heading,
+.popup-subheading {
+  margin: 0;
+}
+
+.popup-cross {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -40px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  color: $color-dark-3xl;
+  font-size: 24px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.popup-subheading {
+  color: #000;
+}
+
+.popup-text {
+  max-width: 260px;
+  font-family: $fontS;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+.popup-cross:hover {
+  background-color: $color-primary;
+}
+
+.popup-list-item {
+  color: $color-primary;
+
+  .key {
+    color: #000;
+    font-weight: bold;
+  }
+
+  .popup-span {
+    color: #000;
+    font-weight: normal;
+  }
+}
+
+.invisible {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .popup-container {
+    width: 240px;
+    height: 340px;
+  }
+
+  .popup-img-container {
+    display: none;
+  }
+
+  .popup-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  .popup-subheading {
+    text-align: center;
+  }
+
+  .popup-text {
+    text-align: justify;
+  }
+  
+  .popup-list {
+    padding-left: 15px;
+  }
 }
