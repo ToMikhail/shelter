@@ -334,11 +334,11 @@ body {
   }
 }
 
-.navigation {
+.pagination {
   gap: 20px;
 }
 
-.navigation-btn {
+.pagination-btn {
   width: 50px;
   height: 50px;
   padding: 0;
@@ -350,27 +350,27 @@ body {
   cursor: pointer;
 }
 
-.navigation-btn--inactive {
+.pagination-btn--inactive {
   border-color: $color-dark-s;
   color: $color-dark-s;
   cursor: default;
 }
 
-.btn.navigation-btn--inactive:hover {
+.btn.pagination-btn--inactive:hover {
   background-color: transparent;
   border-color: $color-dark-s;
 }
 
-.btn.navigation-btn-page {
+.btn.pagination-btn-page {
   cursor: default;
 }
 
-.btn.navigation-btn-page:hover {
+.btn.pagination-btn-page:hover {
   border-color: $color-primary;
   background-color: $color-primary;
 }
 
-.navigation-btn--active {
+.pagination-btn--active {
   border-color: $color-primary;
 }
 
@@ -465,7 +465,7 @@ body {
     display: none;
   }
 
-  // .navigation {
+  // .pagination {
   //   gap: 20px;
   // }
 
@@ -568,7 +568,7 @@ body {
     display: none;
   }
 
-  .navigation {
+  .pagination {
     gap: 10px;
     justify-content: space-between;
   }

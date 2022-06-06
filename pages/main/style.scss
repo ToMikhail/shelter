@@ -265,9 +265,19 @@ body.lock {
   }
 }
 
+.nav-menu-body.is-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: 0.5);
+}
+
 .logo {
   height: 60px;
   cursor: pointer;
+  transition: 5s;
 
   .logo-title {
     margin: 0 0 10px 0;
@@ -277,6 +287,12 @@ body.lock {
   .logo-subtitle {
     margin: 0;
   }
+}
+
+.logo.is-active {
+  position: fixed;
+  right: 116px;
+  transition: 5s;
 }
 
 .header-list-items {
@@ -799,6 +815,10 @@ body.lock {
         flex-direction: column;
         align-items: center;
       }
+    }
+    #nav-menu-header.is-active {
+      right: 0;
+      
     }
   }
 

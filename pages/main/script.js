@@ -1,7 +1,9 @@
 import data from "../../assets/data/pets.json" assert { type: "json" };
 
 const BODY = document.querySelector("body");
+const LOGO = document.querySelector(".logo ")
 const burgerBtn = document.querySelector(".burger");
+const LINE = document.querySelector(".line");
 const navHead = document.getElementById("nav-menu-header");
 const SLIDER_RIGHT = document.querySelector("#slider-btn-right");
 const SLIDER_LEFT = document.querySelector("#slider-btn-left");
@@ -10,6 +12,58 @@ const SLIDER_ACTIVE = document.querySelector(".slider-item-active");
 
 let petInfoBtns = document.querySelectorAll(".slider-card");
 const popup = document.querySelector(".popup");
+
+
+// BURGER start
+
+burgerBtn.addEventListener("click", (e) => {
+  addClassActiveBurger();
+  addClassLockBody();
+  document.querySelector(".nav-menu-body").classList.toggle("is-active");
+  document.querySelector(".nav-menu").classList.toggle("is-active");
+  LOGO.classList.toggle('is-active')
+});
+
+//bubling
+LINE.addEventListener("click", () => {
+  addClassActiveBurger();
+  addClassLockBody();
+  document.querySelector(".nav-menu-body").classList.toggle("is-active");
+  document.querySelector(".nav-menu").classList.toggle("is-active");
+  LOGO.classList.toggle('is-active')
+});
+
+BODY.addEventListener("click", (event) => {
+  if (
+    event.target !== navHead &&
+    burgerBtn.classList.contains("isActive") &&
+    event.target !== burgerBtn
+  ) {
+    addClassActiveBurger();
+    addClassLockBody();
+    document.querySelector(".nav-menu").classList.remove("is-active");
+    LOGO.classList.remove('is-active')
+  }
+});
+
+function addClassActiveBurger() {
+  burgerBtn.classList.toggle("isActive");
+}
+
+//old
+// function isVisibleNav() {
+//   if (burgerBtn.classList.contains("isActive")) {
+//     navHead.style.right = "0";
+//   } else {
+//     navHead.style.right = "-100%";
+//   }
+// }
+
+function addClassLockBody() {
+  BODY.classList.toggle("lock");
+}
+
+// BURGER end
 
 //POPUP start
 petInfoBtns.forEach((element) => {
