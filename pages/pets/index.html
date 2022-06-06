@@ -48,7 +48,7 @@
           <div class="slider flex-container">
 
             <div class="slider-cards flex-container">
-              <div class="slider-card flex-container card-container">
+              <!-- <div class="slider-card flex-container card-container">
                 <img src="../../assets/img/pets-katrine.png" alt="Katrine" class="img">
                 <h4 class="title-item">Katrine</h4>
                 <button class="btn pets-btn">Learn more</button>
@@ -87,21 +87,21 @@
                 <img src="../../assets/img/pets-freddie.png" alt="Freddie" class="img">
                 <h4 class="title-item">Freddie</h4>
                 <button class="btn pets-btn">Learn more</button>
-              </div>
+              </div> -->
             </div>
           </div>
-          <div class="navigation flex-container">
-            <div class="btn navigation-btn navigation-btn--inactive navigation-btn-start flex-container title-item">
+          <div class="pagination flex-container">
+            <div class="btn pagination-btn pagination-btn--inactive pagination-btn-start flex-container title-item">
               &lt;&lt;
             </div>
-            <div class="btn navigation-btn navigation-btn--inactive navigation-btn-previus flex-container title-item">
+            <div class="btn pagination-btn pagination-btn--inactive pagination-btn-previous flex-container title-item">
               &lt;
             </div>
-            <div class="btn btn-primary navigation-btn navigation-btn-page flex-container title-item">1</div>
-            <div class="btn navigation-btn navigation-btn--active navigation-btn-next flex-container title-item">
+            <div class="btn btn-primary pagination-btn pagination-btn-page flex-container title-item">1</div>
+            <div class="btn pagination-btn pagination-btn--active pagination-btn-next flex-container title-item">
               &gt;
             </div>
-            <div class="btn navigation-btn navigation-btn--active navigation-btn-end flex-container title-item">
+            <div class="btn pagination-btn pagination-btn--active pagination-btn-end flex-container title-item">
               &gt;&gt;
             </div>
           </div>
@@ -134,7 +134,13 @@
       </div>
     </footer>
   </div>
-  <script src="./script.js"></script>
+  <div class="popup invisible">
+    <div class="popup-body">
+      <div class="popup-container">
+      </div>
+    </div>
+  </div>
+  <script src="./script.js" type="module"></script>
 </body>
 
 </html>
