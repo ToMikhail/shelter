@@ -73,7 +73,7 @@ function getPreviousPage() {
   }
 
   if (+pageNumber.textContent === 1) {
-    console.log('fuck');
+    console.log("fuck");
     PREVIOUS_PAGE.classList.add("pagination-btn--inactive");
     FIRST_PAGE.classList.add("pagination-btn--inactive");
     PREVIOUS_PAGE.classList.remove("pagination-btn--active");
@@ -82,7 +82,7 @@ function getPreviousPage() {
     FIRST_PAGE.removeEventListener("click", goFirstPage);
   }
   if (+pageNumber.textContent !== 1) {
-    console.log('hel');
+    console.log("hel");
     PREVIOUS_PAGE.classList.add("pagination-btn--active");
     FIRST_PAGE.classList.add("pagination-btn--active");
     PREVIOUS_PAGE.classList.remove("pagination-btn--inactive");
@@ -96,6 +96,8 @@ function getPreviousPage() {
 
   NEXT_PAGE.addEventListener("click", getNextPage);
   LAST_PAGE.addEventListener("click", goLastPage);
+
+  getPopUp();
 }
 
 function getNextPage() {
@@ -137,6 +139,7 @@ function getNextPage() {
     FIRST_PAGE.addEventListener("click", goFirstPage);
   }
 
+  getPopUp();
 }
 
 FIRST_PAGE.addEventListener("click", goFirstPage);
@@ -174,6 +177,8 @@ function goFirstPage() {
 
   NEXT_PAGE.addEventListener("click", getNextPage);
   LAST_PAGE.addEventListener("click", goLastPage);
+
+  getPopUp();
 }
 
 function goLastPage() {
@@ -209,11 +214,12 @@ function goLastPage() {
 
   PREVIOUS_PAGE.addEventListener("click", getPreviousPage);
   FIRST_PAGE.addEventListener("click", goFirstPage);
+
+  getPopUp();
 }
 
 //pagination end
 
-let petInfoBtns = document.querySelectorAll(".pets-btn");
 const popup = document.querySelector(".popup");
 
 // BURGER start
@@ -258,13 +264,15 @@ function addClassLockBody() {
 
 //popup start
 
-petInfoBtns.forEach((element) => {
-  element.addEventListener("click", () => {
-    let petName = element.previousSibling.previousSibling.textContent;
+function getPopUp() {
+  let petInfoBtns = document.querySelectorAll(".slider-card");
+  petInfoBtns.forEach((element) => {
+    element.addEventListener("click", () => {
+      let petName = element.querySelector(".title-item").textContent;
 
-    data.forEach((element) => {
-      if (element.name === petName) {
-        popup.innerHTML = `
+      data.forEach((element) => {
+        if (element.name === petName) {
+          popup.innerHTML = `
         <div class="popup-container">
         <div class="popup-img-container">
           <img class="popup-img" src= ${element.img}></img>
@@ -282,14 +290,72 @@ petInfoBtns.forEach((element) => {
         </div>
         <div class="popup-cross">&#10006</div>
       </div>`;
-      }
-    });
-    let popupCloseBtn = document.querySelector(".popup-cross");
-    popup.classList.toggle("invisible");
-    popupCloseBtn.addEventListener("click", () => {
-      popup.classList.add("invisible");
+        }
+      });
+
+      let popupCloseBtn = document.querySelector(".popup-cross");
+      popup.classList.toggle("invisible");
+      BODY.classList.toggle("lock");
+      popupCloseBtn.addEventListener("click", () => {
+        popup.classList.add("invisible");
+        BODY.classList.remove("lock");
+      });
+
+      BODY.addEventListener("click", (e) => {
+        if (e.target.classList.contains("popup")) {
+          popup.classList.add("invisible");
+          BODY.classList.remove("lock");
+        }
+      });
     });
   });
-});
+}
+
+
+getPopUp();
+// let petInfoBtns = document.querySelectorAll(".slider-card");
+// petInfoBtns.forEach((element) => {
+//   element.addEventListener("click", () => {
+//     let petName = element.querySelector(".title-item").textContent;
+
+//     data.forEach((element) => {
+//       if (element.name === petName) {
+//         popup.innerHTML = `
+//         <div class="popup-container">
+//         <div class="popup-img-container">
+//           <img class="popup-img" src= ${element.img}></img>
+//         </div>
+//         <div class="popup-content">
+//           <h3 class="popup-heading heading-section">${element.name}</h3>
+//           <h4 class="title-item popup-subheading">${element.type} - ${element.breed}</h4>
+//           <p class="popup-text">${element.description}</p>
+//           <ul class="popup-list">
+//             <li class="popup-list-item"><span class="key">Age: </span><span data-age = 'age' class="popup-span">${element.age}</span></li>
+//             <li class="popup-list-item"><span class="key">Inoculations: </span><span data-Inoculations = 'inoculations:' class="popup-span">${element.inoculations}</span></li>
+//             <li class="popup-list-item"><span class="key">Diseases: </span><span data-diseases = 'diseases' class="popup-span">${element.diseases}</span></li>
+//             <li class="popup-list-item"><span class="key">Parasites: </span><span data-parasites = 'parasites' class="popup-span">${element.parasites}</span></li>
+//           </ul>
+//         </div>
+//         <div class="popup-cross">&#10006</div>
+//       </div>`;
+//       }
+//     });
+
+//     let popupCloseBtn = document.querySelector(".popup-cross");
+//     popup.classList.toggle("invisible");
+//     BODY.classList.toggle("lock");
+//     popupCloseBtn.addEventListener("click", () => {
+//       popup.classList.add("invisible");
+//       BODY.classList.remove("lock");
+//     });
+
+//     BODY.addEventListener("click", (e) => {
+//       if (e.target.classList.contains("popup")) {
+//         popup.classList.add("invisible");
+//         BODY.classList.remove("lock");
+//       }
+//     });
+//   });
+// });
 
 //popup end
